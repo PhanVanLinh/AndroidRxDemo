@@ -35,4 +35,11 @@
         android:text="Flat Map demo"
         />
 
+    <Button
+        android:id="@+id/button_concat_with"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Concat With"
+        />
+
 </LinearLayout>
