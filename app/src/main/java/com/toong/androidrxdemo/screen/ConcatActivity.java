@@ -39,6 +39,13 @@ public class ConcatActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * ConcatActivity: onSubscribe
+     * ConcatActivity: a
+     * ConcatActivity: b
+     * ConcatActivity: c
+     * ConcatActivity: onComplete
+     */
     private Observable<String> concatTest() {
         return Observable.concat(getListData(), getListData2(), getListData3());
     }
