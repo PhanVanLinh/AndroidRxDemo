@@ -36,10 +36,32 @@
         />
 
     <Button
+        android:id="@+id/button_zip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Zip demo"
+        />
+
+    <Button
+        android:id="@+id/button_concat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Concat demo"
+        />
+
+    <Button
         android:id="@+id/button_concat_with"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Concat With"
         />
+
+    <Button
+        android:id="@+id/button_flat_map_with_zip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Flat map With Zip"
+        />
+
 
 </LinearLayout>

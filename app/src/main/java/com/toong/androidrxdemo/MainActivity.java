@@ -49,7 +49,31 @@ public class MainActivity extends BaseActivity {
 //            }
 //        });
 
-        Observable.merge(a("1"), a("2")).subscribe();
+        getList("s").subscribe();
+
+//        getList("s").subscribe(new Observer<String>() {
+//            @Override
+//            public void onSubscribe(Disposable d) {
+//
+//            }
+//
+//            @Override
+//            public void onNext(String s) {
+//
+//            }
+//
+//            @Override
+//            public void onError(Throwable e) {
+//
+//            }
+//
+//            @Override
+//            public void onComplete() {
+//
+//            }
+//        });
+
+        //Observable.merge(a("1"), a("2")).subscribe();
 
 //        a("1").map(new Function<String, Integer>() {
 //            @Override
@@ -78,8 +102,13 @@ public class MainActivity extends BaseActivity {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        e.onNext(""+b);
-                        e.onComplete();
+                        try {
+                            throw new OutOfMemoryError();
+//                            e.onNext("" + b);
+//                            e.onComplete();
+                        }catch (OutOfMemoryError ex){
+                            e.onError(ex);
+                        }
                     }
                 }, 500);
             }

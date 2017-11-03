@@ -5,28 +5,26 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import com.toong.androidrxdemo.R;
 import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Function;
 
-public class FlatMapActivity extends AppCompatActivity {
+public class ConcatActivity extends AppCompatActivity {
     private String TAG = getClass().getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_flat_map);
+        setContentView(R.layout.activity_concat);
 
-        flatMapTest().subscribe(new Observer<String>() {
+        concatTest().subscribe(new Observer<String>() {
             @Override
             public void onSubscribe(Disposable d) {
                 Log.i(TAG, "onSubscribe");
             }
 
             @Override
-            public void onNext(String strings) {
-                Log.i(TAG, "onNext" + strings);
+            public void onNext(String s) {
+                Log.i(TAG, "" + s);
             }
 
             @Override
@@ -41,14 +39,8 @@ public class FlatMapActivity extends AppCompatActivity {
         });
     }
 
-    private Observable<String> flatMapTest() {
-        return getListData().flatMap(new Function<String, ObservableSource<String>>() {
-            @Override
-            public ObservableSource<String> apply(String s) throws Exception {
-                Log.i(TAG, "receive Data");
-                return getListData2();
-            }
-        });
+    private Observable<String> concatTest() {
+        return Observable.concat(getListData(), getListData2(), getListData3());
     }
 
     public Observable<String> getListData() {

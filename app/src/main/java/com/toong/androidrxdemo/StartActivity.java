@@ -4,9 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import com.toong.androidrxdemo.screen.ConcatActivity;
+import com.toong.androidrxdemo.screen.FlatMapActivity;
 
 import com.toong.androidrxdemo.screen.ConcatWithActivity;
+import com.toong.androidrxdemo.screen.FlatMapWithZipActivity;
 import com.toong.androidrxdemo.screen.SimpleActivity;
+import com.toong.androidrxdemo.screen.ZipActivity;
 
 public class StartActivity extends BaseActivity{
     Button btnSimple;
@@ -31,6 +35,10 @@ public class StartActivity extends BaseActivity{
         btnMerge.setOnClickListener(this);
         btnMap.setOnClickListener(this);
         btnFlatMap.setOnClickListener(this);
+
+        findViewById(R.id.button_concat).setOnClickListener(this);
+        findViewById(R.id.button_zip).setOnClickListener(this);
+        findViewById(R.id.button_flat_map_with_zip).setOnClickListener(this);
         btnConcatWith.setOnClickListener(this);
     }
 
@@ -41,16 +49,25 @@ public class StartActivity extends BaseActivity{
                 startActivity(new Intent(mActivityContext, SimpleActivity.class));
                 break;
             case R.id.button_merge:
-
+                startActivity(new Intent(mActivityContext, MainActivity.class));
                 break;
             case R.id.button_map:
 
                 break;
             case R.id.button_flat_map:
-
+                startActivity(new Intent(mActivityContext, FlatMapActivity.class));
+                break;
+            case R.id.button_concat:
+                startActivity(new Intent(mActivityContext, ConcatActivity.class));
+                break;
+            case R.id.button_zip:
+                startActivity(new Intent(mActivityContext, ZipActivity.class));
                 break;
             case R.id.button_concat_with:
                 startActivity(new Intent(mActivityContext, ConcatWithActivity.class));
+                break;
+            case R.id.button_flat_map_with_zip:
+                startActivity(new Intent(mActivityContext, FlatMapWithZipActivity.class));
                 break;
         }
     }
