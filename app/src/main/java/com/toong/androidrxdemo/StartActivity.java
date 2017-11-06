@@ -9,6 +9,7 @@ import com.toong.androidrxdemo.screen.FlatMapActivity;
 
 import com.toong.androidrxdemo.screen.ConcatWithActivity;
 import com.toong.androidrxdemo.screen.FlatMapWithZipActivity;
+import com.toong.androidrxdemo.screen.MergeActivity;
 import com.toong.androidrxdemo.screen.SimpleActivity;
 import com.toong.androidrxdemo.screen.ZipActivity;
 
@@ -49,7 +50,7 @@ public class StartActivity extends BaseActivity{
                 startActivity(new Intent(mActivityContext, SimpleActivity.class));
                 break;
             case R.id.button_merge:
-                startActivity(new Intent(mActivityContext, MainActivity.class));
+                startActivity(new Intent(mActivityContext, MergeActivity.class));
                 break;
             case R.id.button_map:
 

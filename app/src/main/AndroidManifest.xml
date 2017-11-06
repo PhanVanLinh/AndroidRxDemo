@@ -30,6 +30,8 @@
         </activity>
         <activity android:name=".screen.FlatMapWithZipActivity">
         </activity>
+        <activity android:name=".screen.MergeActivity">
+        </activity>
     </application>
 
 </manifest>
