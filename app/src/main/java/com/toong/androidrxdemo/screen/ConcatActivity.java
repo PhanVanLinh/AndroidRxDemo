@@ -5,8 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import com.toong.androidrxdemo.R;
 import io.reactivex.Observable;
+import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
+import java.util.ArrayList;
 
 public class ConcatActivity extends AppCompatActivity {
     private String TAG = getClass().getSimpleName();
@@ -16,7 +18,7 @@ public class ConcatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_concat);
 
-        concatTest().subscribe(new Observer<String>() {
+        concatDelayErrorTest2().subscribe(new Observer<String>() {
             @Override
             public void onSubscribe(Disposable d) {
                 Log.i(TAG, "onSubscribe");
@@ -42,23 +44,51 @@ public class ConcatActivity extends AppCompatActivity {
     /**
      * ConcatActivity: onSubscribe
      * ConcatActivity: a
+     * ConcatActivity: c
+     * ConcatActivity: onErrorjava.lang.Exception: example exception
+     */
+    private Observable<String> concatDelayErrorTest() {
+        return Observable.concatDelayError(new ArrayList<ObservableSource<? extends String>>() {{
+            add(getData());
+            add(getData4());
+            add(getData3());
+        }});
+    }
+
+    /**
+     * ConcatActivity: onSubscribe
+     * ConcatActivity: a
+     * ConcatActivity: c
+     * ConcatActivity: onErrorjava.lang.Exception: example exception
+     */
+    private Observable<String> concatDelayErrorTest2() {
+        return Observable.concatDelayError(Observable.just(getData(), getData4(), getData3()));
+    }
+
+    /**
+     * ConcatActivity: onSubscribe
+     * ConcatActivity: a
      * ConcatActivity: b
      * ConcatActivity: c
      * ConcatActivity: onComplete
      */
     private Observable<String> concatTest() {
-        return Observable.concat(getListData(), getListData2(), getListData3());
+        return Observable.concat(getData(), getData2(), getData3());
     }
 
-    public Observable<String> getListData() {
+    public Observable<String> getData() {
         return Observable.just("a");
     }
 
-    public Observable<String> getListData2() {
+    public Observable<String> getData2() {
         return Observable.just("b");
     }
 
-    public Observable<String> getListData3() {
+    public Observable<String> getData3() {
         return Observable.just("c");
+    }
+
+    public Observable<String> getData4() {
+        return Observable.error(new Exception("example exception"));
     }
 }
