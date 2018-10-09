@@ -41,7 +41,6 @@ public class FlatMapThenZip extends AppCompatActivity {
         return getData().flatMap(new Function<List<String>, SingleSource<List<Item>>>() {
             @Override
             public SingleSource<List<Item>> apply(List<String> stringList) throws Exception {
-
                 return get(stringList);
             }
         });

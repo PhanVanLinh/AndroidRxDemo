@@ -45,7 +45,6 @@ public class FlatMapActivity extends AppCompatActivity {
         return getListData().flatMap(new Function<String, ObservableSource<String>>() {
             @Override
             public ObservableSource<String> apply(String s) throws Exception {
-                Log.i(TAG, "receive Data");
                 return getListData2();
             }
         });
