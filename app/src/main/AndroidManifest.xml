@@ -44,7 +44,12 @@
             android:name=".kotlin.screen.KotlinFlatMapActivity"
             android:exported="true">
         </activity>
-        <activity android:name=".kotlin.screen.KotlinAndThenActivity"
+        <activity
+            android:name=".kotlin.screen.KotlinAndThenActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".kotlin.screen.KotlinMaybeActivity"
             android:exported="true"
             >
         </activity>
