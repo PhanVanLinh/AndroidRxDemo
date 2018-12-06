@@ -11,6 +11,7 @@ import com.toong.androidrxdemo.screen.FlatMapActivity;
 import com.toong.androidrxdemo.screen.FlatMapThenZip;
 import com.toong.androidrxdemo.screen.FlatMapWithZipActivity;
 import com.toong.androidrxdemo.screen.MergeActivity;
+import com.toong.androidrxdemo.screen.RepeatActivity;
 import com.toong.androidrxdemo.screen.RetryActivity;
 import com.toong.androidrxdemo.screen.SimpleActivity;
 import com.toong.androidrxdemo.screen.ZipActivity;
@@ -31,6 +32,7 @@ public class StartActivity extends BaseActivity {
         findViewById(R.id.button_zip).setOnClickListener(this);
         findViewById(R.id.button_flat_map_with_zip).setOnClickListener(this);
         findViewById(R.id.button_retry).setOnClickListener(this);
+        findViewById(R.id.button_repeat).setOnClickListener(this);
         findViewById(R.id.button_combine_latest).setOnClickListener(this);
         findViewById(R.id.button_concat_with).setOnClickListener(this);
         findViewById(R.id.button_flat_map_then_zip).setOnClickListener(this);
@@ -68,6 +70,9 @@ public class StartActivity extends BaseActivity {
                 break;
             case R.id.button_retry:
                 startActivity(new Intent(mActivityContext, RetryActivity.class));
+                break;
+            case R.id.button_repeat:
+                startActivity(new Intent(mActivityContext, RepeatActivity.class));
                 break;
             case R.id.button_delay:
                 startActivity(new Intent(mActivityContext, DelayActivity.class));

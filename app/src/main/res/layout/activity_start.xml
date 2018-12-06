@@ -84,6 +84,13 @@
             />
 
         <Button
+            android:id="@+id/button_repeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Repeat"
+            />
+
+        <Button
             android:id="@+id/button_delay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

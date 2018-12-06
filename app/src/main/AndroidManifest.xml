@@ -13,46 +13,32 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity android:name=".StartActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".screen.SimpleActivity">
-        </activity>
-        <activity android:name=".screen.FlatMapActivity">
-        </activity>
-        <activity android:name=".screen.ConcatActivity">
-        </activity>
-        <activity android:name=".screen.ZipActivity">
-        </activity>
-        <activity android:name=".screen.ConcatWithActivity">
-        </activity>
-        <activity android:name=".screen.FlatMapWithZipActivity">
-        </activity>
-        <activity android:name=".screen.MergeActivity">
-        </activity>
-        <activity android:name=".screen.DelayActivity">
-        </activity>
-        <activity android:name=".screen.RetryActivity">
-        </activity>
-        <activity android:name=".screen.CombineLatestActivity">
-        </activity>
-        <activity android:name=".screen.FlatMapThenZip">
-        </activity>
+        <activity android:name=".screen.SimpleActivity"></activity>
+        <activity android:name=".screen.FlatMapActivity"></activity>
+        <activity android:name=".screen.ConcatActivity"></activity>
+        <activity android:name=".screen.ZipActivity"></activity>
+        <activity android:name=".screen.ConcatWithActivity"></activity>
+        <activity android:name=".screen.FlatMapWithZipActivity"></activity>
+        <activity android:name=".screen.MergeActivity"></activity>
+        <activity android:name=".screen.DelayActivity"></activity>
+        <activity android:name=".screen.RetryActivity"></activity>
+        <activity android:name=".screen.CombineLatestActivity"></activity>
+        <activity android:name=".screen.FlatMapThenZip"></activity>
         <activity
             android:name=".kotlin.screen.KotlinFlatMapActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".kotlin.screen.KotlinAndThenActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".kotlin.screen.KotlinMaybeActivity"
-            android:exported="true"
-            >
-        </activity>
+            android:exported="true"></activity>
+        <activity android:name=".screen.RepeatActivity"></activity>
     </application>
 
 </manifest>
